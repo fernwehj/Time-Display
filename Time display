@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+class time// creating class
+{
+ 	public : 
+	int seconds;
+	int hh,mm,ss;
+	bool i;
+	void timecheak(void);
+	void disp(void);
+};
+
+void time :: timecheak (void)//function defining
+{
+	cout<<"Enter the hour :\n";
+	cin>>hh;
+	cout<<"Enter the minutes :\n";
+	cin>>mm;
+	cout<<"Enter the seconds :\n";
+	cin>>ss;
+	if (hh>24||mm>60||ss>60)// cheaking time 
+	{
+	cout<<"invalid time. Hour should be less than 24 & minutes and secondes should be less than 60";
+	i = false;
+	}	
+}
+void time :: disp (void)
+{
+		if (i)// exicute only if inputed time is right
+		{
+				seconds = 3600*hh+60*mm+ss;
+		     	cout<<"\nTime is :\t"<<hh<<":"<<mm<<":"<<ss;
+		     	cout<<"\nTotal time in seconds :"<<seconds;
+		}
+			
+}
+
+int main()
+{
+	time t;//creating object
+	t.timecheak();
+	t.disp();	
+}
